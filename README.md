@@ -21,13 +21,13 @@
 ## 安裝與啟動步驟
 
 1. **複製專案：**
-   ```powershell
+   ```CMD
    git clone <repository-url>
    cd llm-linebot-demo
    ```
 
 2. **安裝 Python 套件：**
-   ```powershell
+   ```CMD
    pip install -r requirements.txt
    ```
 
@@ -48,17 +48,16 @@
      LINE_CHANNEL_SECRET=你的LINE_SECRET
      LINE_CHANNEL_ACCESS_TOKEN=你的LINE_TOKEN
      GEMINI_API_KEY=你的GOOGLE_GEMINI_KEY
-     DATABASE_URL=postgresql://postgresforline:password@localhost:5432/yourdb
      NGROK_AUTH_TOKEN=你的NGROK_TOKEN
-     MENTION_KEYWORDS=@MENTION_KEYWORDS
+     DATABASE_URL=postgresql://postgresforline:password@localhost:5432/yourdb
      ```
 
 6. **啟動 FastAPI 服務與 ngrok（推薦用 start.bat）：**
-   ```powershell
+   ```CMD
    start.bat
    ```
    或手動啟動：
-   ```powershell
+   ```CMD
    uvicorn app.main:app --host 0.0.0.0 --port 8080
    ngrok http 8080
    ```

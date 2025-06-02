@@ -1,0 +1,9 @@
+fastapi
+uvicorn
+httpx
+google-generativeai
+python-dotenv
+line-bot-sdk
+sqlalchemy
+psycopg2-binary
+tenacity

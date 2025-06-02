@@ -16,9 +16,11 @@ app = FastAPI()
 # 初始化 LINE Bot 處理器，使用環境變數中的 Channel Secret
 handler = WebhookHandler(os.getenv("LINE_CHANNEL_SECRET"))
 
-# 等待資料庫服務啟動並初始化資料庫
-wait_for_db()  # 等待資料庫啟動
-init_db()      # 初始化資料庫
+# 等待資料庫啟動
+wait_for_db() 
+
+# 初始化資料庫
+init_db()      
 
 # 定義 LINE Bot 的 webhook 端點
 @app.post("/callback")

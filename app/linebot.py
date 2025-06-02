@@ -31,19 +31,6 @@ def get_sender_id(event) -> str:
         return source.room_id
     return "unknown"
 
-def remove_mention_keywords(text: str) -> str:
-    """移除訊息中的提及關鍵字
-    
-    Args:
-        text (str): 原始訊息文字
-    
-    Returns:
-        str: 移除提及關鍵字後的文字
-    """
-    for kw in MENTION_KEYWORDS:
-        text = re.sub(re.escape(kw), "", text, flags=re.IGNORECASE)
-    return text.strip()
-
 def clean_markdown_for_line(text: str) -> str:
     """清理 Markdown 格式，使其適合在 LINE 中顯示
     

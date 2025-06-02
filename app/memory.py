@@ -32,16 +32,6 @@ class Message(Base):
     content = Column(Text)  # 訊息內容
     timestamp = Column(DateTime, default=datetime.utcnow)  # 訊息時間戳
 
-class UserState(Base):
-    """使用者狀態資料表
-    
-    用於儲存使用者的設定狀態
-    """
-    __tablename__ = "user_state"
-
-    sender_id = Column(String, primary_key=True)  # 使用者 ID（主鍵）
-    mention_mode = Column(Boolean, default=False)  # 提醒模式開關
-
 # --- 初始化資料庫 ---
 
 def init_db():
